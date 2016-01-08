@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+exports = module.exports = function(req,res){
+    if(!req.session.name){
+        res.render('index', {title:'主页'});
+    }else{
+        res.render('index', {title:'主页', name:req.session.name})
+    }
 
-/*home page*/
-router.get('/', function(req,res,next){
-    res.render('index',{title:'Express'});
-});
-
-module.exports = router;
+};

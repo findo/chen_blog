@@ -1,0 +1,35 @@
+doctype html
+html(lang="zh-CN" ng-app="baseapp")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/public/css/default.css" rel="stylesheet" type="text/css")
+        block title
+
+    body
+
+        block header
+
+        nav
+            span
+                a(title="主页",href="/") Home
+            if name
+                span
+                    a(title="name",href="/")=name
+                span
+                    a(title="logout", href="/logout") logout
+            else
+                span
+                    a(title="登陆",href="/login") login
+                span
+                    a(title="注册",href="/register") register
+
+
+        div.main-container
+            block main-content
+
+
+        script(src='/public/bower_components/jquery/dist/jquery.min.js')
+        script(src='/public/bower_components/angular/angular.min.js')
+        script(src='/controllers/base_controller.js')

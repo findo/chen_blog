@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="baseapp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/public/css/default.css" rel="stylesheet" type="text/css">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1></h1>
+    </header>
+    <nav><span><a title="主页" href="/">Home</a></span><span><a title="登陆" href="/login">login</a></span><span><a title="注册" href="/register">register</a></span></nav>
+    <div class="main-container">
+      <form ng-controller="registerController">
+        <label>用户名</label>
+        <input type="text" required ng-model="name"><br>
+        <label>密码</label>
+        <input type="password" required ng-model="password"><br>
+        <label>确认密码</label>
+        <input type="password" required ng-model="passwordrepeat"><br>
+        <label>邮箱</label>
+        <input type="email" required ng-model="email"><br>
+        <input type="submit" value="注册" ng-click="userRegister()">
+        <p>{{stat}}</p>
+      </form>
+    </div>
+    <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/public/bower_components/angular/angular.min.js"></script>
+    <script src="/controllers/base_controller.js"></script>
+  </body>
+</html>

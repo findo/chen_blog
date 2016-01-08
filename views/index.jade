@@ -1,7 +1,15 @@
-html
-    head
-        title
-            hello chen
-    body
-        this is my blog
-    
+extend ./layout/default
+
+block title
+    title #{title}
+
+block header
+    header
+        h1 #{title}
+
+block main-content
+    if name
+        span
+            | hello
+            a(href='/')=name
+            
