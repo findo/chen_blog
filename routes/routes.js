@@ -3,7 +3,7 @@ module.exports = function(app){
     app.all('/login', require('./login'));
     app.all('/register', require('./register'));
     app.all('/logout', require('./logout'));
-    //app.all('/post', require('./post'));
+    app.all('/post', require('./post'));
     //app.all('/users', require('./users'))
 
 
