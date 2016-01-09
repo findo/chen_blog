@@ -12,7 +12,7 @@ angular.module('baseapp',[]).controller('baseController', function($scope){
         }else{
             $.post('/register',{email:$scope.email, name:$scope.name, password:$scope.password}, function(rest){
                if(rest.status=='register_ok'){
-                   window.location.href = '/'
+                   window.location.href = '/u/' + $scope.name;
                }else{
                    $scope.stat = rest.status;
                    $scope.$apply()        //传播model的变化
@@ -27,14 +27,23 @@ angular.module('baseapp',[]).controller('baseController', function($scope){
     $scope.password = '';
     $scope.stat = '';
     $scope.userLogin = function(){
+        console.log("tetwetwef");
         $.post('/login', {account:$scope.account, password:$scope.password}, function(rest){
             if(rest.status == 'success'){
-                window.location = '/'
+                window.location = '/u/' + rest.name;
             }else{
                 $scope.stat = rest.status;
                 $scope.$apply()
             }
         })
+    }
+
+}).controller('postController', function($scope){
+    $scope.title = '';
+    $scope.summary = '';
+    $scope.content = '';
+    $scope.userPost = function(){
+        $.post('/post', {title: $scope.title, summary: $scope.summary, content: $scope.content}, function(rest){});
     }
 
 })

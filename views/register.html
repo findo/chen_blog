@@ -5,29 +5,57 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/public/css/default.css" rel="stylesheet" type="text/css">
+    <link href="/public/responsive-nav.js-master/responsive-nav.css" rel="stylesheet" type="text/css">
+    <link href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <title></title>
   </head>
   <body>
-    <header>
-      <h1></h1>
-    </header>
-    <nav><span><a title="主页" href="/">Home</a></span><span><a title="登陆" href="/login">login</a></span><span><a title="注册" href="/register">register</a></span></nav>
-    <div class="main-container">
-      <form ng-controller="registerController">
-        <label>用户名</label>
-        <input type="text" required ng-model="name"><br>
-        <label>密码</label>
-        <input type="password" required ng-model="password"><br>
-        <label>确认密码</label>
-        <input type="password" required ng-model="passwordrepeat"><br>
-        <label>邮箱</label>
-        <input type="email" required ng-model="email"><br>
-        <input type="submit" value="注册" ng-click="userRegister()">
-        <p>{{stat}}</p>
-      </form>
+    <div id="navigation" role="navigation" class="nav-collapse">
+      <ul>
+        <li class="atcive"><a href="/">HOME</a></li>
+        <li><a href="/login">LOGIN</a></li>
+        <li><a href="/register">REGISTER</a></li>
+      </ul>
     </div>
+    <div role="main" class="main"><a href="#nav" class="nav-toggle">Menu</a>
+      <div class="main-container">
+        <form style="padding-top:10em; max-width: 30em; margin:0 auto;" align="center" ng-controller="registerController" class="form-horizontal">
+          <h2 class="form-signin-heading">请登陆</h2>
+          <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label">用户名</label>
+            <div class="col-sm-10">
+              <input type="text" placeholder="email or name" ng-model="name" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-10">
+              <input type="password" placeholder="password" ng-model="password" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">确认密码</label>
+            <div class="col-sm-10">
+              <input type="password" placeholder="password" ng-model="passwordrepeat" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
+            <div class="col-sm-10">
+              <input type="email" placeholder="password" ng-model="email" class="form-control">
+            </div>
+          </div>
+          <input type="submit" ng-click="userRegister()" class="btn btn-lg btn-primary">
+          <p>{{stat}}</p>
+          <div style="height:100em" name="zhandifang"></div>
+        </form>
+      </div>
+    </div>
+    <script src="/public/responsive-nav.js-master/responsive-nav.js"></script>
     <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+    <!--script(src='/public/bower_components/bootstrap/dist/js/bootstrap.min.js')-->
     <script src="/public/bower_components/angular/angular.min.js"></script>
     <script src="/controllers/base_controller.js"></script>
+    <script>var navigation = responsiveNav("navigation",{customToggle: ".nav-toggle"})</script>
   </body>
 </html>

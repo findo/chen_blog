@@ -1,8 +1,9 @@
 exports = module.exports = function(req,res){
-    if(!req.session.name){
+    if(!req.session.user){
         res.render('index', {title:'主页'});
     }else{
-        res.render('index', {title:'主页', name:req.session.name})
+        res.redirect('/u/' + req.session.user.name)
+        //res.render('index', {title:'主页', user:req.session.user})
     }
 
 };

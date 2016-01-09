@@ -1,37 +1,46 @@
 doctype html
-html(lang="zh-CN" ng-app="baseapp")
+html(lang="zh-CN" ng-app='baseapp')
     head
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(href="/public/css/default.css" rel="stylesheet" type="text/css")
+        link(href="/public/responsive-nav.js-master/responsive-nav.css" rel="stylesheet" type="text/css")
+        link(href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css")
+        block link
+
+
         block title
 
     body
 
-        block header
-
-        nav
-            span
-                a(title="主页",href="/") Home
-            if name
-                span
-                    a(title="name",href="/")=name
-                span
-                    a(title="logout", href="/logout") logout
-                span
-                    a(title="post", href="/post") post
-            else
-                span
-                    a(title="登陆",href="/login") login
-                span
-                    a(title="注册",href="/register") register
+        div#navigation(role="navigation" class="nav-collapse")
+            ul
+                li.atcive
+                    a(href="/") HOME
+                if user
+                    li: a(href="/logout") LOGOUT
+                    li: a(href="/post") POST
+                    li: a(href="#")=user.name
+                else
+                    li: a(href="/login") LOGIN
+                    li: a(href="/register") REGISTER
 
 
-        div.main-container
-            block main-content
+
+        div.main(role="main")
+            a.nav-toggle(href="#nav") Menu
+
+            div.main-container
+                block main-content
 
 
+
+        script(src="/public/responsive-nav.js-master/responsive-nav.js")
         script(src='/public/bower_components/jquery/dist/jquery.min.js')
+        //script(src='/public/bower_components/bootstrap/dist/js/bootstrap.min.js')
         script(src='/public/bower_components/angular/angular.min.js')
         script(src='/controllers/base_controller.js')
+        script.
+            var navigation = responsiveNav("navigation",{customToggle: ".nav-toggle"})
+        block script

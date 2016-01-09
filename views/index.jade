@@ -1,12 +1,26 @@
 extend ./layout/default
 
+block link
+
+
 block title
     title #{title}
 
-block header
-    header
-        h1 #{title}
 
 block main-content
-    
+    if name
+        h1 welcome
+        p 快去写点什么吧
+
+    else
+        h1 welcome
+        p 这是一个可以畅所欲言的地方，快去注册一个账号吧，如果已经有账号的话，快去登陆看看。-^-^- .
+
+    div(style="height:100em" name="zhandifang")
+
+
+block script
+
+
+
             

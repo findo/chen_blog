@@ -1,24 +1,30 @@
 extend ./layout/default
 block title
     title #{title}
-block header
-    header
-        h1 #{title}
 
 block main-content
-    form(ng-controller="registerController")
-        label 用户名
-        input(type="text", required, ng-model="name")
-        br
-        label 密码
-        input(type="password", required, ng-model="password")
-        br
-        label 确认密码
-        input(type="password", required, ng-model="passwordrepeat")
-        br
-        label 邮箱
-        input(type="email", required, ng-model="email")
-        br
-        input(type="submit" value="注册" ng-click="userRegister()")
-
+    form.form-horizontal(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="registerController")
+        h2.form-signin-heading 请登陆
+        div.form-group
+            label.col-sm-2.control-label(for="inputEmail") 用户名
+            div.col-sm-10
+                input.form-control(type="text" placeholder="email or name" ng-model="name")
+        div.form-group
+            label.col-sm-2.control-label(for="inputPassword") 密码
+            div.col-sm-10
+                input.form-control(type="password" placeholder="password" ng-model="password")
+        div.form-group
+            label.col-sm-2.control-label(for="inputPassword") 确认密码
+            div.col-sm-10
+                input.form-control(type="password" placeholder="password" ng-model="passwordrepeat")
+        div.form-group
+            label.col-sm-2.control-label(for="inputPassword") 邮箱
+            div.col-sm-10
+                input.form-control(type="email" placeholder="password" ng-model="email")
+        input.btn.btn-lg.btn-primary(type="submit" ng-click="userRegister()")
         p {{stat}}
+
+        div(style="height:100em" name="zhandifang")
+
+
+

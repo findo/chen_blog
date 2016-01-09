@@ -2,16 +2,18 @@ extend ./layout/default
 
 block title
     title #{title}
-block header
-    header
-        h1 #{title}
 
 block main-content
-    form(ng-controller="loginController")
-        label 用户名或邮箱
-        input(type="text" ng-model="account")
-        br
-        label 登陆密码
-        input(type="password" ng-model="password")
-        br
-        input(type="submit" ng-click="userLogin()")
+    form.form-horizontal(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="loginController")
+        h2.form-signin-heading 请登陆
+        div.form-group
+            label.col-sm-2.control-label(for="inputEmail") Account
+            div.col-sm-10
+                input.form-control(type="text" placeholder="email or name" ng-model="account")
+        div.form-group
+            label.col-sm-2.control-label(for="inputPassword") Password
+            div.col-sm-10
+                input.form-control(type="password" placeholder="password" ng-model="password")
+        input.btn.btn-lg.btn-primary(type="submit" ng-click="userLogin()")
+
+        div(style="height:100em" name="zhandifang")

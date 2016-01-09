@@ -7,6 +7,7 @@ exports = module.exports = function(req,res){
         res.render('login',{title:'登陆'});
     }
     if(req.method == "POST"){
+        console.log("what")
         pwd = crypto.createHash('sha256').update(req.body.password).digest('base64').toString();
         console.log(pwd);
 
@@ -17,9 +18,11 @@ exports = module.exports = function(req,res){
             }
             if(user){
                 if(user.password == pwd){
-                    req.session.name = user.name;
-                    res.json({status: "success"})
+                    console.log('t3')
+                    req.session.user = user;
+                    res.json({status: "success",name:user.name});
                 }else{
+                    console.log('t2')
                     res.json({status: "wrong password"})
                 }
             }else{
