@@ -18,11 +18,9 @@ exports = module.exports = function(req,res){
             }
             if(user){
                 if(user.password == pwd){
-                    console.log('t3')
                     req.session.user = user;
                     res.json({status: "success",name:user.name});
                 }else{
-                    console.log('t2')
                     res.json({status: "wrong password"})
                 }
             }else{

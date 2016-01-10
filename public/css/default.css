@@ -23,9 +23,7 @@ ol,ul,li {
 @-o-viewport { width: device-width; }
 @viewport { width: device-width; }
 
-html, body {
-    min-height: 100%;
-}
+
 
 body {
     min-width: 290px;
@@ -230,3 +228,21 @@ a:hover {
     .nav-collapse { width: 18em }
     .main { width: auto; left: 18em }
 }
+
+
+.article_title a{
+    float:left;
+    color: #00aabb;
+    font-size: 2em;
+}
+
+.article_title a:hover{
+    float:left;
+    color: #00bbaa;
+    font-size: 2em;
+}
+
+.article_summary {
+    max-width: 60em;
+}
+

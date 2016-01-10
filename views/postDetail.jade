@@ -1,0 +1,23 @@
+extend ./layout/default
+block link
+block title
+    title #{title}
+
+block main-content
+    h1=postTitle
+    p.info
+        | 作者:
+        a(href="")=user.name
+        |  |
+        | 日期:
+        | #{time}
+
+    div#articleContent
+        | #{postContent}
+
+
+block script
+    script(src="http://cdn.bootcss.com/markdown.js/0.5.0/markdown.min.js")
+    script.
+        var a = document.getElementById("articleContent").innerHTML;
+        document.getElementById("articleContent").innerHTML = markdown.toHTML(a);

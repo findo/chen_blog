@@ -4,5 +4,12 @@ block title
     title #{title}
 block main-content
     h1 这里是个人主页
+    div
+        each post in posts
+            div.article_title: a(href="/u/#{name}/post/#{post._id}")=post.title
+            div.article_summary: p=post.summary
+
+
+
     div(style="height:100em" name="zhandifang")
 block script

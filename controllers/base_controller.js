@@ -43,7 +43,11 @@ angular.module('baseapp',[]).controller('baseController', function($scope){
     $scope.summary = '';
     $scope.content = '';
     $scope.userPost = function(){
-        $.post('/post', {title: $scope.title, summary: $scope.summary, content: $scope.content}, function(rest){});
+        $.post('/post', {title: $scope.title, summary: $scope.summary, content: $scope.content}, function(rest){
+            if(rest.status == 'success'){
+                window.location = '/u/' + rest.name;
+            }
+        });
     }
 
 })

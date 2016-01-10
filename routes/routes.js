@@ -5,6 +5,7 @@ module.exports = function(app){
     app.all('/register', require('./register'));
     app.all('/logout', require('./logout'));
     app.all('/post', require('./post'));
+    app.all('/u/:name/post/:postId', require('./postDetail'));
     //app.all('/users', require('./users'))
 
 
