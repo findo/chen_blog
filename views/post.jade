@@ -1,17 +1,19 @@
 extend ./layout/default
+
+
 block title
     title #{title}
 
 block main-content
     form(ng-controller="postController")
         h3 title
-        input(type="text" ng-model="title")
+        input#title_input(type="text" placeholder="input the tilte" ng-model="title")
         br
         h3 summary
-        textarea(ng-model="summary" rows="2" cols="100")
+        textarea#summary_input(ng-model="summary" placeholder="input the summary" rows="2" cols="100")
         br
         h3 content
-        textarea(ng-model="content" rows="20" cols="100")
+        textarea#content_input(ng-model="content" placeholder="here is you content" rows="20" cols="100")
         br
         br
-        input(type="submit" value="post" ng-click="userPost()")
+        input.submitButton(type="submit" value="post" ng-click="userPost()")

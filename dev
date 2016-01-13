@@ -1,0 +1,2 @@
+supervisor app.js &
+gulp watch
