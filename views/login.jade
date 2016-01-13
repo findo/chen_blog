@@ -4,17 +4,17 @@ block title
     title #{title}
 
 block main-content
-    form.form-horizontal(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="loginController")
-        h2.form-signin-heading 请登陆
-        div.form-group
-            label.col-sm-2.control-label(for="inputEmail") Account
-            div.col-sm-10
-                input.form-control(type="text" placeholder="email or name" ng-model="account")
-        div.form-group
-            label.col-sm-2.control-label(for="inputPassword") Password
-            div.col-sm-10
-                input.form-control(type="password" placeholder="password" ng-model="password")
-        input.btn.btn-lg.btn-primary(type="submit" ng-click="userLogin()")
+    form(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="loginController")
+        h2 请登陆
+        div
+            label(for="inputEmail") 账号
+            div
+                input(type="text" placeholder="email or name" ng-model="account")
+        div
+            label(for="inputPassword") 密码
+            div
+                input(type="password" placeholder="password" ng-model="password")
+        input(type="submit" ng-click="userLogin()")
 
         p {{stat}}
 

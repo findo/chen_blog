@@ -8,13 +8,24 @@ block title
 
 
 block main-content
-    if name
-        h1 welcome
-        p 快去写点什么吧
+    h1 welcome
+    p 这是一个可以畅所欲言的地方，快去注册一个账号吧，如果已经有账号的话，快去登陆看看。-^-^- .
 
-    else
-        h1 welcome
-        p 这是一个可以畅所欲言的地方，快去注册一个账号吧，如果已经有账号的话，快去登陆看看。-^-^- .
+    div.recomdation
+        h2 新鲜文章
+        div
+        each post in posts
+            div.article_title: a(href="/u/#{post.author}/post/#{post._id}")=post.title
+            p.articleinfo
+                | 作者:
+                a(href="" style="color:#111;") #{post.author}
+                |  |
+                | 日期:
+                | #{post.time}
+            div.article_summary: p=post.summary
+
+
+
 
     div(style="height:100em" name="zhandifang")
 

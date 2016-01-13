@@ -249,7 +249,7 @@ a:hover {
     width:40%;
 }
 
-#title_input, #summary_input, #content_input{
+input:not([type="submit"]), #title_input, #summary_input, #content_input{
     overflow:hidden;
     border: none;
     background: none;
@@ -261,7 +261,6 @@ a:hover {
     letter-spacing: 1px;
     margin: 0em 0 1.875em 0;
     padding: 0 0 0.875em 0;
-    text-transform: uppercase;
     width: 100%;
     transition: all 0.3s;
 }
@@ -270,10 +269,61 @@ a:hover {
     border-top:solid 2px #474544;
 }
 
-.submitButton{
+
+
+input[type="submit"]{
     background: none;
     padding: 10px 15px;
     text-transform: uppercase;
 }
+
+
+
+.homepagename{
+    padding:0.2em;
+    color:#222222;
+    font-weight: bold;
+    font-family: "responsivenav", sans-serif;
+}
+
+.homepagename:hover {
+    color:#666666;
+    border-bottom: solid 1px #666666;
+}
+
+.homepagetitle{
+    padding-top:2em;
+    font-size:1.7em;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.articleinfo{
+    font-size:0.7em;
+    color:#445566;
+}
+
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color:    #474544;
+    text-transform: uppercase;
+
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:    #474544;
+    text-transform: uppercase;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:    #474544;
+    text-transform: uppercase;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:    #474544;
+    text-transform: uppercase;
+}
+
+
+
+
 
 

@@ -3,25 +3,25 @@ block title
     title #{title}
 
 block main-content
-    form.form-horizontal(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="registerController")
-        h2.form-signin-heading 请登陆
-        div.form-group
-            label.col-sm-2.control-label(for="inputEmail") 用户名
-            div.col-sm-10
-                input.form-control(type="text" placeholder="email or name" ng-model="name")
-        div.form-group
-            label.col-sm-2.control-label(for="inputPassword") 密码
-            div.col-sm-10
-                input.form-control(type="password" placeholder="password" ng-model="password")
-        div.form-group
-            label.col-sm-2.control-label(for="inputPassword") 确认密码
-            div.col-sm-10
-                input.form-control(type="password" placeholder="password" ng-model="passwordrepeat")
-        div.form-group
-            label.col-sm-2.control-label(for="inputPassword") 邮箱
-            div.col-sm-10
-                input.form-control(type="email" placeholder="password" ng-model="email")
-        input.btn.btn-lg.btn-primary(type="submit" ng-click="userRegister()")
+    form(style="padding-top:10em; max-width: 30em; margin:0 auto;", align="center" ng-controller="registerController")
+        h2 请注册
+        div
+            label(for="inputEmail") 用户名
+            div
+                input(type="text" placeholder="username" ng-model="name")
+        div
+            label(for="inputPassword") 密码
+            div
+                input(type="password" placeholder="password" ng-model="password")
+        div
+            label(for="inputPassword") 确认密码
+            div
+                input(type="password" placeholder="password again" ng-model="passwordrepeat")
+        div
+            label(for="inputPassword") 邮箱
+            div
+                input(type="email" placeholder="email" ng-model="email")
+        input(type="submit" ng-click="userRegister()")
         p {{stat}}
 
         div(style="height:100em" name="zhandifang")

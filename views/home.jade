@@ -3,11 +3,16 @@ block link
 block title
     title #{title}
 block main-content
-    h1 这里是个人主页
+    div.homepagetitle
+        | 这里是
+        a.homepagename(href="/u/#{name}") #{name}
+        | 的主页
     div
         each post in posts
-            div.article_title: a(href="/u/#{name}/post/#{post._id}")=post.title
+            div.article_title: a(href="/u/#{post.author}/post/#{post._id}")=post.title
             div.article_summary: p=post.summary
+
+
 
 
 

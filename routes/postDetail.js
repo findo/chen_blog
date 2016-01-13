@@ -8,6 +8,6 @@ exports = module.exports = function(req, res){
     Post.findOne({author:userName,_id:postId},function(err,post){
         console.log(post);
         console.log(markdown.toHTML(post.content));
-        res.render("postDetail",{user:req.session.user,time:post.time,postTitle:post.title,postContent:post.content});
+        res.render("postDetail",{username:post.author,time:post.time,postTitle:post.title,postContent:post.content});
     })
 }
